@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { Compass, Menu, X, ArrowRight } from 'lucide-react'
+import { Compass, Menu, X, ArrowRight, LayoutDashboard, LogOut } from 'lucide-react'
 import { Button } from '../ui/Button'
+import { useAuth } from '../../context/AuthContext'
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
+  const { user, signOut } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +19,6 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Smooth scroll handler for anchor links
   const scrollToSection = (sectionId: string) => {
     setMobileMenuOpen(false)
     if (location.pathname !== '/') {
@@ -30,6 +31,12 @@ export const Navbar: React.FC = () => {
       const el = document.getElementById(sectionId)
       el?.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const handleLogout = async () => {
+    setMobileMenuOpen(false)
+    await signOut()
+    navigate('/')
   }
 
   return (
@@ -95,22 +102,46 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate('/login')}
-              className="text-slate-700 font-semibold"
-            >
-              Login
-            </Button>
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => navigate('/signup')}
-              icon={<ArrowRight className="w-4 h-4" />}
-            >
-              Get Started
-            </Button>
+            {user ? (
+              <>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/dashboard')}
+                  icon={<LayoutDashboard className="w-4 h-4 text-indigo-600" />}
+                >
+                  Dashboard
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleLogout}
+                  icon={<LogOut className="w-4 h-4 text-slate-400" />}
+                  className="text-slate-600 hover:text-slate-900"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate('/login')}
+                  className="text-slate-700 font-semibold"
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => navigate('/signup')}
+                  icon={<ArrowRight className="w-4 h-4" />}
+                >
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Trigger */}
@@ -162,29 +193,57 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-            <Button
-              variant="outline"
-              size="md"
-              className="w-full justify-center"
-              onClick={() => {
-                setMobileMenuOpen(false)
-                navigate('/login')
-              }}
-            >
-              Login
-            </Button>
-            <Button
-              variant="primary"
-              size="md"
-              className="w-full justify-center"
-              onClick={() => {
-                setMobileMenuOpen(false)
-                navigate('/signup')
-              }}
-              icon={<ArrowRight className="w-4 h-4" />}
-            >
-              Get Started
-            </Button>
+            {user ? (
+              <>
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="w-full justify-center"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    navigate('/dashboard')
+                  }}
+                  icon={<LayoutDashboard className="w-4 h-4" />}
+                >
+                  Go to Dashboard
+                </Button>
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="w-full justify-center"
+                  onClick={handleLogout}
+                  icon={<LogOut className="w-4 h-4" />}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="w-full justify-center"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    navigate('/login')
+                  }}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="w-full justify-center"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    navigate('/signup')
+                  }}
+                  icon={<ArrowRight className="w-4 h-4" />}
+                >
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
         </div>
       )}
