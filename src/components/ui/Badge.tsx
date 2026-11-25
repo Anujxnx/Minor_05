@@ -2,20 +2,23 @@ import React from 'react'
 
 interface BadgeProps {
   children: React.ReactNode
-  variant?: 'indigo' | 'emerald' | 'amber' | 'slate'
+  variant?: 'burgundy' | 'coral' | 'cream' | 'slate' | 'indigo' | 'emerald' | 'amber'
   className?: string
 }
 
 export const Badge: React.FC<BadgeProps> = ({
   children,
-  variant = 'indigo',
+  variant = 'burgundy',
   className = '',
 }) => {
   const variantStyles = {
-    indigo: 'bg-indigo-50 text-indigo-700 border-indigo-200/60',
-    emerald: 'bg-emerald-50 text-emerald-700 border-emerald-200/60',
-    amber: 'bg-amber-50 text-amber-700 border-amber-200/60',
-    slate: 'bg-slate-100 text-slate-700 border-slate-200',
+    burgundy: 'bg-[#800020]/10 text-[#800020] border-[#800020]/25',
+    coral: 'bg-[#D45060]/10 text-[#D45060] border-[#D45060]/30',
+    cream: 'bg-[#F3E6D5] text-stone-800 border-[#E5D4C0]',
+    slate: 'bg-stone-100 text-stone-700 border-stone-200',
+    indigo: 'bg-[#800020]/10 text-[#800020] border-[#800020]/20',
+    emerald: 'bg-emerald-50 text-emerald-800 border-emerald-200/60',
+    amber: 'bg-amber-50 text-amber-800 border-amber-200/60',
   }
 
   return (

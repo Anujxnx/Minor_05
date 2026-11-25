@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/85 backdrop-blur-md border-b border-slate-200/70 shadow-xs'
+          ? 'bg-[#FFF9F2]/90 backdrop-blur-md border-b border-[#F3E6D5] shadow-xs'
           : 'bg-transparent'
       }`}
     >
@@ -56,14 +56,14 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-200 group-hover:scale-105 transition-transform duration-200">
+            <div className="w-10 h-10 rounded-xl bg-[#800020] flex items-center justify-center text-[#FFF9F2] shadow-md shadow-[#800020]/25 group-hover:scale-105 transition-transform duration-200">
               <Compass className="w-6 h-6 stroke-[2.2]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
+              <span className="font-bold text-xl tracking-tight text-stone-900 group-hover:text-[#800020] transition-colors">
                 Advisora
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-600 -mt-1">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-[#D45060] -mt-1">
                 Career Exploration
               </span>
             </div>
@@ -76,25 +76,25 @@ export const Navbar: React.FC = () => {
                 if (location.pathname !== '/') navigate('/')
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100/70 transition-colors cursor-pointer"
+              className="px-3.5 py-2 text-sm font-medium text-stone-700 hover:text-[#800020] rounded-lg hover:bg-[#F3E6D5]/50 transition-colors cursor-pointer"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100/70 transition-colors cursor-pointer"
+              className="px-3.5 py-2 text-sm font-medium text-stone-700 hover:text-[#800020] rounded-lg hover:bg-[#F3E6D5]/50 transition-colors cursor-pointer"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('how-it-works')}
-              className="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100/70 transition-colors cursor-pointer"
+              className="px-3.5 py-2 text-sm font-medium text-stone-700 hover:text-[#800020] rounded-lg hover:bg-[#F3E6D5]/50 transition-colors cursor-pointer"
             >
               How It Works
             </button>
             <button
               onClick={() => scrollToSection('features')}
-              className="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100/70 transition-colors cursor-pointer"
+              className="px-3.5 py-2 text-sm font-medium text-stone-700 hover:text-[#800020] rounded-lg hover:bg-[#F3E6D5]/50 transition-colors cursor-pointer"
             >
               Features
             </button>
@@ -108,7 +108,7 @@ export const Navbar: React.FC = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => navigate('/dashboard')}
-                  icon={<LayoutDashboard className="w-4 h-4 text-indigo-600" />}
+                  icon={<LayoutDashboard className="w-4 h-4 text-[#800020]" />}
                 >
                   Dashboard
                 </Button>
@@ -116,8 +116,8 @@ export const Navbar: React.FC = () => {
                   variant="ghost"
                   size="sm"
                   onClick={handleLogout}
-                  icon={<LogOut className="w-4 h-4 text-slate-400" />}
-                  className="text-slate-600 hover:text-slate-900"
+                  icon={<LogOut className="w-4 h-4 text-stone-400" />}
+                  className="text-stone-600 hover:text-[#800020]"
                 >
                   Logout
                 </Button>
@@ -128,7 +128,7 @@ export const Navbar: React.FC = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => navigate('/login')}
-                  className="text-slate-700 font-semibold"
+                  className="text-stone-800 font-semibold hover:text-[#800020]"
                 >
                   Login
                 </Button>
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
+              className="p-2 rounded-xl text-stone-700 hover:text-[#800020] hover:bg-[#F3E6D5]/50 focus:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -160,7 +160,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-b border-[#F3E6D5] bg-[#FFF9F2]/98 backdrop-blur-lg px-4 pt-2 pb-6 space-y-3 shadow-lg">
           <div className="space-y-1">
             <button
               onClick={() => {
@@ -168,31 +168,31 @@ export const Navbar: React.FC = () => {
                 if (location.pathname !== '/') navigate('/')
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg cursor-pointer"
+              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-stone-800 hover:bg-[#F3E6D5]/50 rounded-lg cursor-pointer"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg cursor-pointer"
+              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-stone-800 hover:bg-[#F3E6D5]/50 rounded-lg cursor-pointer"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('how-it-works')}
-              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg cursor-pointer"
+              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-stone-800 hover:bg-[#F3E6D5]/50 rounded-lg cursor-pointer"
             >
               How It Works
             </button>
             <button
               onClick={() => scrollToSection('features')}
-              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg cursor-pointer"
+              className="w-full text-left px-3.5 py-2.5 text-base font-medium text-stone-800 hover:bg-[#F3E6D5]/50 rounded-lg cursor-pointer"
             >
               Features
             </button>
           </div>
 
-          <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+          <div className="pt-3 border-t border-[#F3E6D5] flex flex-col gap-2">
             {user ? (
               <>
                 <Button

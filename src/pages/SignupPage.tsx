@@ -91,21 +91,21 @@ export const SignupPage: React.FC = () => {
         subtitle="Almost there! Confirm your student email to activate your account."
       >
         <div className="text-center py-4 space-y-4">
-          <div className="w-16 h-16 bg-emerald-50 rounded-2xl border border-emerald-200 flex items-center justify-center text-emerald-600 mx-auto shadow-sm">
+          <div className="w-16 h-16 bg-[#F3E6D5] rounded-2xl border border-[#E5D4C0] flex items-center justify-center text-[#800020] mx-auto shadow-sm">
             <Mail className="w-8 h-8" />
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-bold text-slate-900 text-lg">Check your inbox</h3>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+            <h3 className="font-bold text-stone-900 text-lg">Check your inbox</h3>
+            <p className="text-sm text-stone-600 leading-relaxed max-w-sm mx-auto">
               We sent a verification link to{' '}
-              <strong className="text-slate-900 font-semibold">{email}</strong>.
+              <strong className="text-stone-900 font-semibold">{email}</strong>.
               Click the link in the email to activate your Advisora account.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-100 bg-slate-50 p-3.5 text-xs text-slate-500 text-left">
-            <p className="font-semibold text-slate-700 mb-1">Didn't receive an email?</p>
+          <div className="rounded-xl border border-[#F3E6D5] bg-[#FFF9F2] p-3.5 text-xs text-stone-600 text-left">
+            <p className="font-semibold text-stone-800 mb-1">Didn't receive an email?</p>
             <p>Check your spam folder, or make sure your Supabase project email provider is configured.</p>
           </div>
 
@@ -141,11 +141,11 @@ export const SignupPage: React.FC = () => {
 
         {/* Full Name */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-stone-700 mb-1">
             Full Name
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <User className="w-4 h-4" />
             </div>
             <input
@@ -154,18 +154,18 @@ export const SignupPage: React.FC = () => {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="e.g. Aarav Patel"
-              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white"
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#F3E6D5] text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#800020] focus:border-[#800020] transition-all bg-white"
             />
           </div>
         </div>
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-stone-700 mb-1">
             Student Email
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <Mail className="w-4 h-4" />
             </div>
             <input
@@ -174,18 +174,18 @@ export const SignupPage: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="student@example.com"
-              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white"
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#F3E6D5] text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#800020] focus:border-[#800020] transition-all bg-white"
             />
           </div>
         </div>
 
         {/* Password */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-stone-700 mb-1">
             Password (min. 6 characters)
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <Lock className="w-4 h-4" />
             </div>
             <input
@@ -195,12 +195,12 @@ export const SignupPage: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••••••"
-              className="w-full pl-9 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white"
+              className="w-full pl-9 pr-10 py-2.5 rounded-xl border border-[#F3E6D5] text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#800020] focus:border-[#800020] transition-all bg-white"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 focus:outline-none"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -210,11 +210,11 @@ export const SignupPage: React.FC = () => {
 
         {/* Confirm Password */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-stone-700 mb-1">
             Confirm Password
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <Lock className="w-4 h-4" />
             </div>
             <input
@@ -223,12 +223,12 @@ export const SignupPage: React.FC = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="••••••••••••"
-              className="w-full pl-9 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white"
+              className="w-full pl-9 pr-10 py-2.5 rounded-xl border border-[#F3E6D5] text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#800020] focus:border-[#800020] transition-all bg-white"
             />
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 focus:outline-none"
               aria-label={showConfirmPassword ? 'Hide confirm password' : 'Show confirm password'}
             >
               {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -243,14 +243,14 @@ export const SignupPage: React.FC = () => {
             id="terms"
             checked={acceptTerms}
             onChange={(e) => setAcceptTerms(e.target.checked)}
-            className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+            className="mt-1 h-4 w-4 rounded border-[#F3E6D5] text-[#800020] focus:ring-[#800020] cursor-pointer"
           />
-          <label htmlFor="terms" className="text-xs text-slate-600 cursor-pointer leading-relaxed">
+          <label htmlFor="terms" className="text-xs text-stone-600 cursor-pointer leading-relaxed">
             I agree to the{' '}
             <button
               type="button"
               onClick={() => setTermsModalOpen(true)}
-              className="text-indigo-600 font-semibold hover:underline"
+              className="text-[#800020] font-semibold hover:underline"
             >
               Terms and Conditions
             </button>{' '}
@@ -265,7 +265,7 @@ export const SignupPage: React.FC = () => {
             variant="primary"
             size="md"
             disabled={loading}
-            className="w-full justify-center shadow-md shadow-indigo-200 hover:shadow-indigo-300"
+            className="w-full justify-center shadow-md shadow-[#800020]/20 hover:shadow-[#800020]/30"
           >
             {loading ? (
               <span className="flex items-center gap-2">
@@ -279,9 +279,9 @@ export const SignupPage: React.FC = () => {
         </div>
 
         {/* Login Switch */}
-        <div className="text-center text-xs text-slate-500 pt-3 border-t border-slate-100">
+        <div className="text-center text-xs text-stone-500 pt-3 border-t border-[#F3E6D5]">
           Already have an account?{' '}
-          <Link to="/login" className="text-indigo-600 font-semibold hover:underline">
+          <Link to="/login" className="text-[#800020] font-semibold hover:underline">
             Log in here
           </Link>
         </div>

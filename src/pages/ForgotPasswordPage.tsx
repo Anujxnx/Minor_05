@@ -46,21 +46,21 @@ export const ForgotPasswordPage: React.FC = () => {
         subtitle="Password recovery email sent successfully."
       >
         <div className="text-center py-4 space-y-4">
-          <div className="w-16 h-16 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center text-indigo-600 mx-auto shadow-sm">
+          <div className="w-16 h-16 bg-[#F3E6D5] rounded-2xl border border-[#E5D4C0] flex items-center justify-center text-[#800020] mx-auto shadow-sm">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-bold text-slate-900 text-lg">Recovery Link Dispatched</h3>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+            <h3 className="font-bold text-stone-900 text-lg">Recovery Link Dispatched</h3>
+            <p className="text-sm text-stone-600 leading-relaxed max-w-sm mx-auto">
               We've dispatched a password reset link to{' '}
-              <strong className="text-slate-900 font-semibold">{email}</strong>.
+              <strong className="text-stone-900 font-semibold">{email}</strong>.
               Follow the instructions in that email to choose a new password.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-100 bg-slate-50 p-3.5 text-xs text-slate-500 text-left">
-            <p className="font-semibold text-slate-700 mb-1">Didn't get the email?</p>
+          <div className="rounded-xl border border-[#F3E6D5] bg-[#FFF9F2] p-3.5 text-xs text-stone-600 text-left">
+            <p className="font-semibold text-stone-800 mb-1">Didn't get the email?</p>
             <p>Wait a minute and check your spam folder, or try entering your email again.</p>
           </div>
 
@@ -105,11 +105,11 @@ export const ForgotPasswordPage: React.FC = () => {
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-stone-700 mb-1">
             Student Email Address
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
               <Mail className="w-4 h-4" />
             </div>
             <input
@@ -118,7 +118,7 @@ export const ForgotPasswordPage: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="student@example.com"
-              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white"
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#F3E6D5] text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#800020] focus:border-[#800020] transition-all bg-white"
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ export const ForgotPasswordPage: React.FC = () => {
             variant="primary"
             size="md"
             disabled={loading}
-            className="w-full justify-center shadow-md shadow-indigo-200 hover:shadow-indigo-300"
+            className="w-full justify-center shadow-md shadow-[#800020]/20 hover:shadow-[#800020]/30"
           >
             {loading ? (
               <span className="flex items-center gap-2">
@@ -144,10 +144,10 @@ export const ForgotPasswordPage: React.FC = () => {
         </div>
 
         {/* Return to login */}
-        <div className="text-center text-xs text-slate-500 pt-3 border-t border-slate-100">
+        <div className="text-center text-xs text-stone-500 pt-3 border-t border-[#F3E6D5]">
           <Link
             to="/login"
-            className="inline-flex items-center gap-1.5 text-indigo-600 font-semibold hover:underline"
+            className="inline-flex items-center gap-1.5 text-[#800020] font-semibold hover:underline"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Login</span>

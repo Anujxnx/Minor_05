@@ -9,7 +9,7 @@ import { Footer } from '../components/layout/Footer'
 
 export const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FFF9F2] selection:bg-[#800020] selection:text-white">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
