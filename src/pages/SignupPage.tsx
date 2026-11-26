@@ -62,7 +62,13 @@ export const SignupPage: React.FC = () => {
       const { user, session, error } = await signUp(email.trim(), password, fullName.trim())
 
       if (error) {
-        setErrorMessage(error.message || 'An error occurred during registration.')
+        if (error.message.includes('Invalid API key')) {
+          setErrorMessage(
+            'Invalid Supabase API key. Please check your .env.local: verify that VITE_SUPABASE_ANON_KEY matches the "anon public" key from your Supabase Dashboard (Settings > API) for this project.'
+          )
+        } else {
+          setErrorMessage(error.message || 'An error occurred during registration.')
+        }
         setLoading(false)
         return
       }

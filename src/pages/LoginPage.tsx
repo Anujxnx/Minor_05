@@ -34,7 +34,11 @@ export const LoginPage: React.FC = () => {
       const { session, error } = await signIn(email.trim(), password)
 
       if (error) {
-        if (error.message.includes('Invalid login credentials')) {
+        if (error.message.includes('Invalid API key')) {
+          setErrorMessage(
+            'Invalid Supabase API key. Please check your .env.local: verify that VITE_SUPABASE_ANON_KEY matches the "anon public" key from your Supabase Dashboard (Settings > API) for this project.'
+          )
+        } else if (error.message.includes('Invalid login credentials')) {
           setErrorMessage('Invalid email or password. Please verify and try again.')
         } else if (error.message.includes('Email not confirmed')) {
           setErrorMessage('Email address has not been confirmed yet. Please verify your inbox.')
