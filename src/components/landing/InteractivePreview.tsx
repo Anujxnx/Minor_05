@@ -33,12 +33,11 @@ export const InteractivePreview: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-stone-900 text-sm sm:text-base">Aarav Patel</h3>
+                <h3 className="font-bold text-stone-900 text-sm sm:text-base">Dear User</h3>
                 <span className="rounded-full bg-[#800020]/10 px-2 py-0.5 text-[10px] font-semibold text-[#800020] border border-[#800020]/20">
                   Profile Active
                 </span>
               </div>
-              <p className="text-xs text-stone-500">B.Tech Computer Science • Year 3</p>
             </div>
           </div>
 
